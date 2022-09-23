@@ -202,3 +202,37 @@ FROM movies_tbl;
 
 # running the whole file
 # source <~/src/Talent-Academy/filename>
+
+# List all the actors born before 1980.
+SELECT name
+FROM main_actors_tbl
+WHERE year_of_birth < 1980;
+
+# How many movies did Nolan direct ?
+SELECT COUNT(*)
+FROM movies_tbl
+    INNER JOIN director_id directors_tbl ON movies_tbl.title = directors_tbl.director_id
+WHERE directors_tbl.name LIKE "%Christopher Nolan%";
+
+
+WHERE (id FROM directors_tbl WHERE name like "Christopher Nolan");
+
+(SELECT id FROM directors_tbl WHERE name like "Christopher Nolan")
+
+SELECT COUNT(movies_tbl.title, main_actors_tbl.name)
+FROM movies_tbl
+    JOIN movie_actors_tbl ON movies_tbl.id = movie_actors_tbl.movie_id
+    JOIN main_actors_tbl ON main_actors_tbl.id = movie_actors_tbl.main_actor_id
+WHERE movies_tbl.title LIKE "Avatar";
+
+SELECT COUNT(*)
+FROM movies_tbl
+    INNER JOIN movies_tbl ON directors_tbl.director_id = movies_tbl.id
+    JOIN directors_tbl ON movies_tbl = movies_tbl.id
+WHERE directors_tbl.name LIKE "%Christopher Nolan%";
+
+Among all the movies of James Cameron, how many were female actors ?
+How many directors did Leonardo DiCaprio worked with ?
+Who is the oldest director ?
+What is the earliest movie of the oldest director ?
+What is the latest movie of the youngest actor ?
