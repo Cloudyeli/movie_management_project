@@ -199,3 +199,6 @@ ORDER BY release_year DESC;
 
 SELECT title, release_year
 FROM movies_tbl;
+
+# running the whole file
+# source <~/src/Talent-Academy/filename>
