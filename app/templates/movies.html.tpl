@@ -1,17 +1,19 @@
-<p>This is my template rendered page</p>
-#everything inside is concidered as python code; jinja2
+<p> This is my template rendered page </p>
+<!--everything inside is concidered as python code; jinja2-->
 <table>
     <tr>
-        <th>Title</th>
-        <th>Year</th>
+        <th> Title </th>
+        <th> Year </th>
 
     </tr>
-# open forloop
-{% for movies in movies_data %}
+<!--open forloop-->
+{% for movie in movies_data %}
 <tr>
-    <td> {{movies[1]}}</td>
-    <td> {{movies[2]}}</td>
+<!--Title-->
+    <td> {{ movie[1] }} </td>
+<!--Year-->
+    <td> {{ movie[2] }} </td>
 </tr>
-# close forloop
+<!--close forloop-->
 {% endfor %}
 </table>
