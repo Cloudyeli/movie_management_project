@@ -26,6 +26,8 @@ def list_movies():
     #here we dont need semicolon
     query_string = "SELECT * FROM movies_tbl"
     cursor.execute(query_string)
+    ### Fetches all the rows of a query result. 
+    ### It returns all the rows as a list of tuples. An empty list is returned if there is no record to fetch.
     data = cursor.fetchall()
     cursor.close()
     return json.dumps(data)

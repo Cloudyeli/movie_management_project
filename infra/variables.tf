@@ -1,10 +1,10 @@
 # DEFINING ALL VARIABLES
-variable "amz_ami_owner_id" {
+variable "ubuntu_ami_owner_id" {
   description = "Contains the Owner ID of the ami for amazon linux"
   type        = string
 }
 
-variable "amz_ami_name" {
+variable "ubuntu_ami_name" {
   description = "Name of the ami I want for my project"
   type        = string
 }

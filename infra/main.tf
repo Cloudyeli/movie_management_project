@@ -1,9 +1,9 @@
-data "aws_ami" "amz_linux_image" {
-  owners      = [var.amz_ami_owner_id]
+data "aws_ami" "ubuntu_image" {
+  owners      = [var.ubuntu_ami_owner_id]
   most_recent = true # latest
   filter {
     name   = "name"
-    values = [var.amz_ami_name]
+    values = [var.ubuntu_ami_name]
   }
 }
 
