@@ -15,7 +15,17 @@ variable "vpc_name" {
 }
 
 variable "public_subnet_1_name" {
-  description = "The name if my Public Subnet 1"
+  description = "The name of my Public Subnet 1"
+  type        = string
+}
+
+variable "private_subnet_1_name" {
+  description = "The name of my Private Subnet 1"
+  type        = string
+}
+
+variable "private_subnet_2_name" {
+  description = "The name of my Private Subnet 2"
   type        = string
 }
 
@@ -25,3 +35,32 @@ variable "movie_app_ec2_type" {
 }
 
 variable "keypair_name" {}
+
+variable "db_storage" {
+  description = "Size of the disk for the Database"
+}
+
+variable "db_name" {
+  description = "Name of the Database"
+}
+
+variable "db_engine" {
+  description = "The DB engine to run our RDS"
+}
+
+variable "db_envine_version" {
+  description = "The version of the db engine"
+}
+
+variable "db_instance_class" {
+  description = "Instance Type for the DB"
+}
+
+variable "db_username" {
+  description = "Username to connect to the DB"
+}
+
+variable "db_skip_last_snapshop" {
+  description = "Take a snapshot before destroying the DB"
+  default     = true
+}

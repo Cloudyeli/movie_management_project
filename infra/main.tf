@@ -23,4 +23,27 @@ data "aws_subnet" "public_subnet_1" {
   }
 }
 
+data "aws_subnet" "private_subnet_1" {
 
+  filter {
+    name   = "tag:Name"
+    values = [var.private_subnet_1_name]
+  }
+}
+
+data "aws_subnet" "private_subnet_2" {
+
+  filter {
+    name   = "tag:Name"
+    values = [var.private_subnet_2_name]
+  }
+}
+
+# GET DB PASSWORD
+data "aws_secretsmanager_secret" "movie_db_secret" {
+  name = "movie-db-password"
+}
+
+data "aws_secretsmanager_secret_version" "movie-db-pw" {
+  secret_id = data.aws_secretsmanager_secret.movie_db_secret.id
+}
